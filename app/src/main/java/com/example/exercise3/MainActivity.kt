@@ -14,12 +14,12 @@ class MainActivity : AppCompatActivity() {
         buttonCalculate.setOnClickListener{
 
             var premium = 0
-            val spinnerAge = findViewById<Spinner>(R.id.spinnerAge)
+            val spinnerAges = findViewById<Spinner>(R.id.spinnerAge)
 
-            if(spinnerAge.selectedItem.equals("Less than 17")){
+            if(spinnerAges.selectedItem.equals("Less than 17")){
                 premium += 60
             }
-            else if(spinnerAge.selectedItem.equals("17 to 25")){
+            else if(spinnerAges.selectedItem.equals("17 to 25")){
                 premium += 70
                 if(radioButtonMale.isChecked){
                     premium += 50
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                     premium += 100
                 }
             }
-            else if(spinnerAge.selectedItem.equals("26 to 30")){
+            else if(spinnerAges.selectedItem.equals("26 to 30")){
                 premium += 90
                 if(radioButtonMale.isChecked){
                     premium += 100
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     premium += 150
                 }
             }
-            else if(spinnerAge.selectedItem.equals("31 to 40")){
+            else if(spinnerAges.selectedItem.equals("31 to 40")){
                 premium += 120
                 if(radioButtonMale.isChecked){
                     premium += 150
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                     premium += 200
                 }
             }
-            else if(spinnerAge.selectedItem.equals("41 to 55")){
+            else if(spinnerAges.selectedItem.equals("41 to 55")){
                 premium += 150
                 if(radioButtonMale.isChecked){
                     premium += 200
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                     premium += 250
                 }
             }
-            else if(spinnerAge.selectedItem.equals("More than 55")){
+            else if(spinnerAges.selectedItem.equals("More than 55")){
                 premium += 150
                 if(radioButtonMale.isChecked){
                     premium += 200
@@ -68,6 +68,8 @@ class MainActivity : AppCompatActivity() {
         }
         buttonReset.setOnClickListener {
             textViewPremium.setText("Insurance Premium :")
+            checkBoxSmoker.isChecked = false
+            radioButtonMale.isChecked = false
         }
     }
 }
